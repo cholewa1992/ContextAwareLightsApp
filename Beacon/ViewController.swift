@@ -7,19 +7,28 @@
 //
 
 import UIKit
+import CoreLocation
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController  {
+    let locationController:LocationController = LocationController()
+    
+    @IBOutlet weak var uuidField: UITextField!
+    @IBOutlet weak var addressField: UITextField!
+    @IBAction func buttonPressed(sender: AnyObject) {
+        locationController.address = addressField.text
+        locationController.uuid = uuidField.text
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        locationController.address = addressField.text
+        locationController.uuid = uuidField.text
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
 
