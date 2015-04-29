@@ -13,48 +13,40 @@ import CoreLocation
 
 class OconCom {
 
-    var tcpClient:TCPClient!
+    var udpClient:UDPClient!
     var connectedTo:String!
 
     
     func connect(host:String, port:Int) -> Bool{
-        tcpClient = TCPClient(addr: host, port: port)
-        var (success,errmsg)=tcpClient.connect(timeout: 1)
-        if success{
-            println("Connected to \(host):\(port)");
-            connectedTo = host;
-            return true;
-        }
-        else{
-            println(errmsg)
-            return false;
-        }
+        udpClient = UDPClient(addr: host, port: port)
+        connectedTo = host;
+        return true
     }
     
     func send(person:Person, peer:Peer, address:String!) -> Bool {
         if(address == nil){ return false; }
-        if(tcpClient == nil || connectedTo != address){
-            if(!connect(address, port: 2026)){
-                return false;
-            }
+        if(udpClient == nil || connectedTo != address){
+            connect(address, port: 2027)
         }
+        
         var msg = Package(person: person, peer: peer).msg
-        var (success,errmsg) = tcpClient.send(str: msg)
+        var (success,errmsg) = udpClient.send(str: msg)
         if(success){
-            println("Msg was sent")
+            //println("Msg was sent")
             return true;
         }
-        else{
+        else
+        {
+            println("Msg was not sent");
             println(errmsg);
-            close();
             return false;
         }
     }
     
     func close(){
-        if(tcpClient != nil){
-            tcpClient.close();
-            tcpClient = nil;
+        if(udpClient != nil){
+            udpClient.close();
+            udpClient = nil;
         }
     }
     
@@ -64,7 +56,7 @@ class Package{
     var msg:String;
     
     init(person:Person, peer:Peer){
-        self.msg = "{ \"$type\": \"Ocon.TcpCom.TcpCom+Message, Ocon\", \"Msg\":  { \"$type\":\"Ocon.Messages.EntityMessage, Ocon\", \"Type\": 2, \"Entity\": { \"$type\":\"Pac.Model.Person, Pac\", \"Id\" : \"\(person.id)\", \"Beacons\": ["
+        self.msg = "{ \"$type\": \"Pac.CustomeCom+Message, Pac\", \"Msg\":  { \"$type\":\"Ocon.Messages.EntityMessage, Ocon\", \"Type\": 2, \"Entity\": { \"$type\":\"Pac.Model.Person, Pac\", \"Id\" : \"\(person.id)\", \"Beacons\": ["
         
         
         for beacon in person.beacons{
@@ -88,15 +80,15 @@ class Peer{
 class Beacon{
     var uuid:NSUUID
     var rssi:Int
-    var distance: CLLocationAccuracy
     var proximity: Int
+    var distance: CLLocationAccuracy
     var major:Int
     var minor:Int
-    init(uuid:NSUUID,rssi:Int, distance:CLLocationAccuracy, proximity:Int, major:Int, minor:Int){
-        self.uuid = uuid
-        self.rssi = rssi
+    init(/*uuid:NSUUID,rssi:Int, proximity:Int,*/ distance:CLLocationAccuracy, major:Int, minor:Int){
+        self.uuid = NSUUID.new() //uuid
+        self.rssi = 0 //rssi
+        self.proximity = 0 //proximity
         self.distance = distance
-        self.proximity = proximity
         self.major = major
         self.minor = minor
     }

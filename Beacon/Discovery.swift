@@ -24,10 +24,10 @@ class Discovery : GCDAsyncUdpSocketDelegate{
         }
         
         //Joining multicast group
-        /*if(!udpSocket.joinMulticastGroup("239.5.6.7", error: e)){
+        if(!udpSocket.joinMulticastGroup("239.5.6.7", error: e)){
             println(e);
             return;
-        }*/
+        }
         
         //Begin recieve
         if(!udpSocket.beginReceiving(e)){
