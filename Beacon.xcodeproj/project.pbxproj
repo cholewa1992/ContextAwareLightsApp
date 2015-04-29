@@ -13,7 +13,6 @@
 		161E53041AD5811300E4D310 /* yudpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = 161E52FF1AD5811300E4D310 /* yudpsocket.c */; };
 		161E53051AD5811300E4D310 /* yudpsocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161E53001AD5811300E4D310 /* yudpsocket.swift */; };
 		161E53071AD581BE00E4D310 /* OconCom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161E53061AD581BE00E4D310 /* OconCom.swift */; };
-		1622DA761AE78AB400D948FD /* LocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1622DA751AE78AB400D948FD /* LocationController.swift */; };
 		16DCD5B41AE0044400D88BBF /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 16DCD5B11AE0044400D88BBF /* GCDAsyncSocket.m */; };
 		16DCD5B51AE0044400D88BBF /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 16DCD5B31AE0044400D88BBF /* GCDAsyncUdpSocket.m */; };
 		16DCF0E81ADFFA4F00842748 /* Discovery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DCF0E71ADFFA4F00842748 /* Discovery.swift */; };
@@ -44,7 +43,6 @@
 		161E52FF1AD5811300E4D310 /* yudpsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yudpsocket.c; sourceTree = "<group>"; };
 		161E53001AD5811300E4D310 /* yudpsocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = yudpsocket.swift; sourceTree = "<group>"; };
 		161E53061AD581BE00E4D310 /* OconCom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OconCom.swift; sourceTree = "<group>"; };
-		1622DA751AE78AB400D948FD /* LocationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationController.swift; sourceTree = "<group>"; };
 		164B50FF1AE04E7D00E60EA9 /* GCD-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GCD-Bridging-Header.h"; sourceTree = "<group>"; };
 		16DCD5B01AE0044400D88BBF /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
 		16DCD5B11AE0044400D88BBF /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
@@ -134,7 +132,6 @@
 				16E9F71F1AB72FDF00A536C4 /* LaunchScreen.xib */,
 				16E9F7141AB72FDF00A536C4 /* Supporting Files */,
 				16DCF0E71ADFFA4F00842748 /* Discovery.swift */,
-				1622DA751AE78AB400D948FD /* LocationController.swift */,
 			);
 			path = Beacon;
 			sourceTree = "<group>";
@@ -280,7 +277,6 @@
 				161E53031AD5811300E4D310 /* ytcpsocket.swift in Sources */,
 				16DCF0E81ADFFA4F00842748 /* Discovery.swift in Sources */,
 				16E7466E1AD7B888008AF048 /* SwiftyJSON.swift in Sources */,
-				1622DA761AE78AB400D948FD /* LocationController.swift in Sources */,
 				161E53071AD581BE00E4D310 /* OconCom.swift in Sources */,
 				16DCD5B41AE0044400D88BBF /* GCDAsyncSocket.m in Sources */,
 				161E53051AD5811300E4D310 /* yudpsocket.swift in Sources */,
