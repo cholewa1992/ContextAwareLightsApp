@@ -20,12 +20,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate  {
     
     var prior: [Int :Double] = [:]
     var tries: [Int :Int] = [:]
-    let alpha = 0.5;
     
     @IBOutlet weak var uuidField: UITextField!
     @IBOutlet weak var addressField: UITextField!
+    @IBOutlet weak var alphaSlider: UISlider!
+    @IBOutlet weak var alphaLabel: UILabel!
 
     
+    @IBAction func AlphaUpdated(sender: AnyObject) {
+        alphaLabel.text = "Alpha value: \(alphaSlider.value)"
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -62,6 +66,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate  {
             
             var id = (beacon.major as Int) * 10000 + (beacon.minor as Int)
             var t:Double = beacon.accuracy
+            var alpha = Double(alphaSlider.value)
             prior[id] = prior[id] == nil ? t : alpha * t + (1 - alpha) * prior[id]!
             tries[id] = 0;
 
