@@ -56,13 +56,13 @@ class Package{
     var msg:String;
     
     init(person:Person, peer:Peer){
-        self.msg = "{ \"$type\": \"Pac.CustomeCom+Message, Pac\", \"Msg\":  { \"$type\":\"Ocon.Messages.EntityMessage, Ocon\", \"Type\": 2, \"Entity\": { \"$type\":\"Pac.Model.Person, Pac\", \"Id\" : \"\(person.id)\", \"Beacons\": ["
+        self.msg = "{ \"$type\": \"ContextAwareLights.CustomeCom+Message, ContextAwareLights\", \"Msg\":  { \"$type\":\"Ocon.Messages.EntityMessage, Ocon\", \"Type\": 2, \"Entity\": { \"$type\":\"ContextAwareLights.Model.Person, ContextAwareLights\", \"Id\" : \"\(person.id)\", \"Beacons\": ["
         
         
         for beacon in person.beacons{
             
             
-            self.msg += "{ \"$type\": \"Pac.Model.Beacon, Pac\", \"Id\": \"\(beacon.uuid.UUIDString)\", \"Rssi\": \(beacon.rssi), \"Distance\": \(beacon.distance), \"Proximity\": \(beacon.proximity), \"Major\": \(beacon.major), \"Minor\": \(beacon.minor) },"
+            self.msg += "{ \"$type\": \"ContextAwareLights.Model.Beacon, ContextAwareLights\", \"Id\": \"\(beacon.uuid.UUIDString)\", \"Rssi\": \(beacon.rssi), \"Distance\": \(beacon.distance), \"Proximity\": \(beacon.proximity), \"Major\": \(beacon.major), \"Minor\": \(beacon.minor) },"
         }
         
         

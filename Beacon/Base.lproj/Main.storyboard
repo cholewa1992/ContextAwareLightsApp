@@ -27,7 +27,7 @@
                                     <action selector="AlphaUpdated:" destination="vXZ-lx-hvc" eventType="valueChanged" id="1fs-ml-VQp"/>
                                 </connections>
                             </slider>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="192.168.173.1" borderStyle="roundedRect" placeholder="IPAddress" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="igH-Uc-l6N">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10.27.219.246" borderStyle="roundedRect" placeholder="IPAddress" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="igH-Uc-l6N">
                                 <rect key="frame" x="152" y="111" width="297" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
